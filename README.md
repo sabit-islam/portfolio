@@ -13,7 +13,7 @@ A portfolio website built using React and Chakra UI. This website showcases my p
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/sabit-islam/portfolio
 cd portfolio
 ```
 
