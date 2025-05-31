@@ -1,108 +1,65 @@
-import { Box, Container, Heading, Text, VStack, Divider, SimpleGrid } from '@chakra-ui/react'
+import { Box, Container, Heading, VStack, Text, Stack, Divider } from '@chakra-ui/react'
 
 const Resume = () => {
   return (
     <Box w="100vw" maxW="100%" position="relative">
-      <Container maxW="container.xl" centerContent px={4}>
-        <VStack gap={8} align="stretch" w="100%">
-          <Heading as="h1" size="xl" textAlign="center">
-            Resume
-          </Heading>
+      <Container maxW="container.md" centerContent px={4}>
+        <VStack spacing={6} align="stretch" py={10}>
 
-          {/* Education Section */}
+          {/* Contact Information */}
           <Box>
-            <Heading as="h2" size="lg" mb={4}>
-              Education
-            </Heading>
-            <Box mb={6}>
-              <Heading as="h3" size="md">
-                University of Michigan
-              </Heading>
-              <Text color="gray.600">Bachelors of Science in Computer Science</Text>
-              <Text color="gray.600">Bachelors of Science in Data Science</Text>
-              <Text>Expected Gradution: May 2026, GPA: 3.6/4.0</Text>
-              <Text mt={2}>
-                Relevant Coursework: <br></br>
-                • EECS 183: Elementary Programming Concepts <br></br>
-                • EECS 201: Computer Science Pragmatics <br></br>
-                • EECS 203: Discrete Mathematics <br></br>
-                • EECS 280: Programming and Data Structures <br></br>
-                • EECS 281: Data Structures and Algorithms <br></br>
-                • EECS 370: Computer Organization <br></br>
-                • EECS 376: Algorithm Design and Analysis <br></br>
-                • EECS 398: Practical Data Science <br></br>
-                • EECS 485: Web Systems <br></br>
-                • MATH 214: Applied Linear Algebra <br></br>
-                • MATH 425: Theoretical Probability <br></br>
-                • DATASCI 101: Introduction to Data Science <br></br>
-                • DATASCI 306: Statistical Computing <br></br>
-                <br></br>
-                Future Planned Coursework: <br></br>
-                • EECS 442: Computer Vision <br></br>
-                • EECS 445: Machine Learning <br></br>
-                • EECS 497: Human-Centered Software Engineering & Design<br></br>
-                • EECS 482: Operating Systems <br></br>
-                • EECS 491: Distributed Systems<br></br>
-
-
-              </Text>
-            </Box>
+            <Heading as="h1" size="xl" textAlign="center">Sabit Islam</Heading>
+            <Text textAlign="center">Woodhaven, MI • sabit@umich.edu</Text>
+            <Text textAlign="center">
+              <a href="https://linkedin.com/in/sabit-islam" target="_blank" rel="noopener noreferrer">linkedin.com/in/sabit-islam</a> • <a href="https://github.com/sabit-islam" target="_blank" rel="noopener noreferrer">github.com/sabit-islam</a>
+            </Text>
           </Box>
 
           <Divider />
 
-          {/* Skills Section */}
+          {/* Education */}
           <Box>
-            <Heading as="h2" size="lg" mb={4}>
-              Technical Skills
-            </Heading>
-            <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
-              <Box>
-                <Heading as="h3" size="md" mb={2}>
-                  Programming Languages
-                </Heading>
-                <Text>Python, JavaScript, Java, C++</Text>
-              </Box>
-              <Box>
-                <Heading as="h3" size="md" mb={2}>
-                  Web Technologies
-                </Heading>
-                <Text>React, Flask, HTML, CSS, Node.js</Text>
-              </Box>
-              <Box>
-                <Heading as="h3" size="md" mb={2}>
-                  Databases
-                </Heading>
-                <Text>MongoDB, PostgreSQL, MySQL</Text>
-              </Box>
-              <Box>
-                <Heading as="h3" size="md" mb={2}>
-                  Tools & Others
-                </Heading>
-                <Text>Git, Docker, AWS, Linux</Text>
-              </Box>
-            </SimpleGrid>
+            <Heading as="h2" size="lg">Education</Heading>
+            <Text fontWeight="bold">University of Michigan</Text>
+            <Text>Bachelor of Science in Computer Science, Data Science — GPA: 3.6/4.0</Text>
+            <Text>Ann Arbor, MI • May 2026</Text>
           </Box>
 
           <Divider />
 
-          {/* Experience Section */}
+          {/* Technical Skills */}
           <Box>
-            <Heading as="h2" size="lg" mb={4}>
-              Experience
-            </Heading>
-            <Box mb={6}>
-              <Heading as="h3" size="md">
-                Software Development Intern
-              </Heading>
-              <Text color="gray.600">Company Name</Text>
-              <Text>Summer 2023</Text>
-              <Text mt={2}>
-                • Developed and maintained web applications using React and Node.js
-                • Collaborated with team members to implement new features
-                • Participated in code reviews and improved code quality
-              </Text>
-            </Box>
+            <Heading as="h2" size="lg">Technical Skills</Heading>
+            <Text><strong>Languages:</strong> C, C++, Python, R, Swift, Bash, SQL, JavaScript, Java, HTML/CSS, LaTeX</Text>
+            <Text><strong>Developer Tools:</strong> Linux, MacOS, VS Code, Vim, AWS, Postman, Git, Firebase, Figma, Sketch</Text>
+            <Text><strong>Technologies/Frameworks:</strong> Pandas, NumPy, Plotly, Scikit, Flask, React, Node, SwiftUI, RESTful APIs, JSON</Text>
+          </Box>
+
+          <Divider />
+
+          {/* Experience */}
+          <Box>
+            <Heading as="h2" size="lg">Experience</Heading>
+            <Stack spacing={4}>
+              <Box>
+                <Text fontWeight="bold">Apple Developer Foundation Program Instructor</Text>
+                <Text>Henry Ford College, Dearborn, MI • June 2024 – June 2025</Text>
+                <ul>
+                  <li>Provided mentorship in Xcode, Swift, Sketch, and other iOS frameworks through challenge-based learning.</li>
+                  <li>Facilitated hands-on app development experiences and emphasized creation of functional prototypes.</li>
+                  <li>Curated a structured curriculum introducing students to iOS development via engaging challenge-based projects.</li>
+                </ul>
+              </Box>
+              <Box>
+                <Text fontWeight="bold">Renaissance iOS Developer Intern</Text>
+                <Text>Apple Developer Academy - MSU, Detroit, MI • July 2023 – June 2024</Text>
+                <ul>
+                  <li>Partnered with MSU Community Music School to develop a logistics app benefiting over 200 students.</li>
+                  <li>Utilized native iOS frameworks, Xcode, Sketch, and Git to implement features.</li>
+                  <li>Applied human-centered design and client-centric development to ensure user-focused outcomes.</li>
+                </ul>
+              </Box>
+            </Stack>
           </Box>
         </VStack>
       </Container>
@@ -110,4 +67,4 @@ const Resume = () => {
   )
 }
 
-export default Resume 
+export default Resume

@@ -1,107 +1,80 @@
-import { Box, Container, Heading, SimpleGrid, Text, VStack, Image, IconButton, HStack } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-
-const MotionBox = motion(Box)
+import { Box, Container, Heading, SimpleGrid, Text, VStack, Image, Link as ChakraLink } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 const projects = [
   {
-    title: 'Project 1',
-    description: 'A brief description of your first project. What technologies did you use? What problems did it solve?',
-    image: 'https://via.placeholder.com/400x300',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/yourproject1',
-    demo: 'https://yourproject1.com'
+    title: 'Distributed MapReduce Framework',
+    summary: 'Built a fault-tolerant distributed MapReduce system.',
+    link: '/projects/mapreduce',
+    image: '/mapreduce.jpg',
+    technologies: ['Python', 'Multithreading', 'TCP', 'UDP']
   },
   {
-    title: 'Project 2',
-    description: 'Description of your second project. Highlight your role and the impact it had.',
-    image: 'https://via.placeholder.com/400x300',
-    technologies: ['Python', 'Flask', 'PostgreSQL'],
-    github: 'https://github.com/yourproject2',
-    demo: 'https://yourproject2.com'
+    title: 'Insta485',
+    summary: 'Instagram-inspired full-stack social media app.',
+    link: '/projects/insta485',
+    image: '/insta485.jpg',
+    technologies: ['Python', 'Flask', 'React']
+  },
+  {
+    title: 'League of Legends Position Analysis',
+    summary: 'Analyzed pro match data to assess role impact.',
+    link: '/projects/lol-analysis',
+    image: '/lol-analysis.jpg',
+    technologies: ['Python', 'Pandas', 'Scikit-learn']
   }
-  // Add more projects as needed
 ]
 
 const Projects = () => {
   return (
-    <Box w="100vw" maxW="100%" position="relative">
+    <Box w="100vw" maxW="100%" position="relative" >
       <Container maxW="container.xl" centerContent px={4}>
         <VStack gap={8} align="stretch" w="100%">
-          <Heading
-            as="h1"
-            size="2xl"
-            textAlign="center"
-            bgGradient="linear(to-r, teal.300, blue.500)"
-            bgClip="text"
-          >
+          <Heading as="h1" size="xl" textAlign="center">
             My Projects
           </Heading>
-
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8} w="100%">
             {projects.map((project, index) => (
-              <MotionBox
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                borderWidth="1px"
-                borderRadius="2xl"
-                overflow="hidden"
-                bg="whiteAlpha.50"
-                boxShadow="lg"
-                backdropFilter="blur(10px)"
-                transitionProperty="transform, box-shadow"
-                transitionDuration="0.3s"
-                _hover={{ transform: 'scale(1.03)', boxShadow: 'xl' }}
+              <ChakraLink
+                as={Link}
+                to={project.link}
+                _hover={{ textDecoration: 'none' }}
               >
-                <Image src={project.image} alt={project.title} w="100%" h="200px" objectFit="cover" />
-                <Box p={6}>
-                  <Heading as="h3" size="md" mb={2} color="white">
-                    {project.title}
-                  </Heading>
-                  <Text mb={4} noOfLines={3} color="gray.300">
-                    {project.description}
-                  </Text>
-                  <Box mt={2} display="flex" flexWrap="wrap" gap={2}>
-                    {project.technologies.map((tech, techIndex) => (
-                      <Text
-                        key={techIndex}
-                        px={3}
-                        py={1}
-                        bg="blue.600"
-                        color="white"
-                        borderRadius="full"
-                        fontSize="xs"
-                        fontWeight="bold"
-                      >
-                        {tech}
-                      </Text>
-                    ))}
+                <Box
+                  key={index}
+                  borderWidth="1px"
+                  borderRadius="lg"
+                  overflow="hidden"
+                  _hover={{ transform: 'translateY(-5px)', transition: 'all 0.3s ease' }}
+                >
+                  <Image src={project.image} alt={project.title} w="100%" h="auto" />
+                  <Box p={6}>
+                    <Heading as="h3" size="md" mb={2} color="blue.500">
+                      {project.title}
+                    </Heading>
+                    <Text mb={2}>{project.summary}</Text>
+                    <Box>
+                      {project.technologies.map((tech, techIndex) => (
+                        <Text
+                          key={techIndex}
+                          as="span"
+                          bg="blue.100"
+                          color="blue.800"
+                          px={2}
+                          py={1}
+                          borderRadius="md"
+                          fontSize="sm"
+                          mr={2}
+                          mb={2}
+                          display="inline-block"
+                        >
+                          {tech}
+                        </Text>
+                      ))}
+                    </Box>
                   </Box>
-                  <HStack mt={4} spacing={4}>
-                    <IconButton
-                      icon={<FaGithub />}
-                      aria-label="GitHub"
-                      as="a"
-                      href={project.github}
-                      target="_blank"
-                      variant="ghost"
-                      colorScheme="whiteAlpha"
-                    />
-                    <IconButton
-                      icon={<FaExternalLinkAlt />}
-                      aria-label="Live Demo"
-                      as="a"
-                      href={project.demo}
-                      target="_blank"
-                      variant="ghost"
-                      colorScheme="whiteAlpha"
-                    />
-                  </HStack>
                 </Box>
-              </MotionBox>
+              </ChakraLink>
             ))}
           </SimpleGrid>
         </VStack>
