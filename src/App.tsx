@@ -10,6 +10,7 @@ import theme from './theme'
 import './index.css'
 import ParticlesBackground from './components/ParticlesBackground'
 import ProjectDetails from './components/ProjectDetails.tsx'
+import Terminal from './pages/Terminal.tsx'
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -26,6 +27,7 @@ function App() {
               <Route path="/resume" element={<Resume />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects/:projectId" element={<ProjectDetails />} />
+              <Route path="/terminal" element={<Terminal />} /> 
             </Routes>
           </Box>
           </Box>

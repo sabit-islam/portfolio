@@ -66,7 +66,7 @@ const Contact = () => {
                 h={8}
                 cursor="pointer"
                 _hover={{ color: 'blue.500' }}
-                onClick={() => window.open('https://linkedin.com/in/yourusername', '_blank')}
+                onClick={() => window.open('https://linkedin.com/in/sabit-islam', '_blank')}
               />
               <Icon
                 as={FaEnvelope}
@@ -74,7 +74,7 @@ const Contact = () => {
                 h={8}
                 cursor="pointer"
                 _hover={{ color: 'blue.500' }}
-                onClick={() => window.location.href = 'mailto:your.email@example.com'}
+                onClick={() => window.location.href = 'mailto:sabit@umich.com'}
               />
             </HStack>
           </Box>

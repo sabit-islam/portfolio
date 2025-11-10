@@ -1,6 +1,8 @@
 import { Box, Text, useColorModeValue, Button, Image, Flex, Link } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import '../index.css'; 
+import '../index.css';
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom' 
 
 
 const Home = () => {
@@ -12,6 +14,17 @@ const Home = () => {
   const headingText = "Welcome to My Portfolio!"
 
   const textColor = useColorModeValue('gray.800', 'gray.100')
+    const navigate = useNavigate()  // <-- This is what was missing!
+  
+    useEffect(() => {
+      const listener = (e: KeyboardEvent) => {
+        if ( e.shiftKey && e.key.toLowerCase() === 't') {
+          navigate('/terminal')  // Now it works
+        }
+      }
+      window.addEventListener('keydown', listener)
+      return () => window.removeEventListener('keydown', listener)
+    }, [navigate])
 
   return (
     <Box position="relative" zIndex={1} maxH="100vh" display="flex" alignItems="center" justifyContent="center"  py={12} px={4} >
@@ -68,6 +81,18 @@ const Home = () => {
               >
                 View My Projects
               </Button>
+              <Button
+                mt={6}
+                size="lg"
+                colorScheme="white"
+                variant="solid"
+                as="a"
+                href="/terminal"
+              >
+                 Time Travel
+              </Button>
+
+              
             </Box>
           </Flex>
         </MotionBox>

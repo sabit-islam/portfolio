@@ -14,6 +14,7 @@ const Navbar = () => {
   const bg = useColorModeValue('white', 'gray.800')
   const color = useColorModeValue('gray.800', 'whiteAlpha.900')
 
+
   return (
     <Box bg={bg} px={6} py={4} boxShadow="sm" position="sticky" top="0" zIndex="1000">
       <Flex alignItems="center">
